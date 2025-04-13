@@ -9,12 +9,14 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    
+
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
   <body>
-  	<article>
+  	<div class="article">
     	<header class="header">
         <div class="header-l">
           <div style="display: flex; justify-content: start; width:35%; align-items: center;"><img src="img/logo.png" class="logo"><h2>East Culture</h2></div>
@@ -38,28 +40,42 @@
 
           <div class="listBlock">
             <div class="listContainer">
-              
-              <div class="listElement">
-                <div class="listElementTop">
-                  <div class="listElementLeft">
-                    <h3>Омикудзи, гадание на бамбуковых палочках</h3>
+
+              <div class="searchForm" id="searchForm">
+                <form id="searchEditForm" onsubmit="searchFunc();">
+                  <input type="text" name="search" id="searchEdit" placeholder="Найти...">
+                  <button id="searchButton"><h4>Найти</h4></button>
+                </form>
+              </div>
+
+              <div class="listElementContainer" id="elem0" data-nameForSearch="Омикудзи, гадание на бамбуковых палочках">
+                <button class="listElement" id="btn0" onclick="hideContentSwitch(0)">
+                  <div class="listElementTop">
+                    <div class="listElementLeft">
+                      <h3>Омикудзи, гадание на бамбуковых палочках</h3>
+                    </div>
+                    <div class="listElementRight">
+                      <div class="arrow arrow-bottom" id="arrow0"></div>
+                    </div>
                   </div>
-                  <div class="listElementRight">
-                    <div class="arrow arrow-bottom"></div>
-                  </div>
+                </button>
+                <div class="listElementContent hide" id="cont0">
+                  <p><img src="img/komuso.png">До середины XVII века в Японии можно было встретить бродячих монахов, просящих милостыню за игру на флейте. Их называли «комосо» (薦僧 комосо:) — «монахи соломенных матов». Прозвище это не несло под собой какой-то особой истории: слово «комо» означало грубую циновку, на которой монахи спали, а во время пеших странствий её носили свёрнутой за спиной, а со: значило «монах». Нищие монахи, играющие на флейте ради подаяний, у порядочных горожан не вызывали особой симпатии.</p>
                 </div>
               </div>
 
-              <div class="listElement">
-                <div class="listElementTop">
-                  <div class="listElementLeft">
-                    <h3>Комусо, монахи с флейтами и корзинами на голове</h3>
+              <div class="listElementContainer" id="elem1" data-nameForSearch="Комусо, монахи с флейтами и корзинами на голове">
+                <button class="listElement" id="btn1" onclick="hideContentSwitch(1)">
+                  <div class="listElementTop">
+                    <div class="listElementLeft">
+                      <h3>Комусо, монахи с флейтами и корзинами на голове</h3>
+                    </div>
+                    <div class="listElementRight">
+                      <div class="arrow arrow-bottom" id="arrow1"></div>
+                    </div>
                   </div>
-                  <div class="listElementRight">
-                    <div class="arrow arrow-top"></div>
-                  </div>
-                </div>
-                <div class="listElementContent">
+                </button>
+                <div class="listElementContent hide" id="cont1">
                   <p><img src="img/komuso.png">До середины XVII века в Японии можно было встретить бродячих монахов, просящих милостыню за игру на флейте. Их называли «комосо» (薦僧 комосо:) — «монахи соломенных матов». Прозвище это не несло под собой какой-то особой истории: слово «комо» означало грубую циновку, на которой монахи спали, а во время пеших странствий её носили свёрнутой за спиной, а со: значило «монах». Нищие монахи, играющие на флейте ради подаяний, у порядочных горожан не вызывали особой симпатии.</p>
                 </div>
               </div>
@@ -69,7 +85,7 @@
         </div>
     	</main>
 
-    	<footer class="footer mt-auto">
+    	<footer class="footer">
       		<div class="footer-l">
       			<div class="footer-c">
       				<div><b>East Culture Inc.</b></div>
@@ -83,6 +99,14 @@
       			</div>
       		</div>
     	</footer>
-    </article>	
+    </div>	
   </body>
+
+  <script src="script.js"></script>
+  <script type="text/javascript">
+      var form = document.getElementById("searchEditForm");
+      function handleForm(event) { event.preventDefault(); } 
+      form.addEventListener('submit', handleForm);
+  </script>
+
 </html>
